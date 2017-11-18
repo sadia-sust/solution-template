@@ -181,7 +181,7 @@ public class Solution implements Runnable {
         executeQuery(TableOneName, TableTwoName, tableOneConditionColumn[1],tableTwoConditionColumn[1], queryLineOne);
 
         String blankLine = readLine();
-        
+
         } 
 
 
@@ -239,9 +239,9 @@ public class Solution implements Runnable {
 
         //initialize tableOneSelectedColumnIndex and tableOneSelectedColumnIndex with -1
         for(int i=0;i<tableOneObj.numberOfColumn;i++)
-            tableOneSelectedColumnIndex[i] =- 1;
+            tableOneSelectedColumnIndex[i] = -1;
         for(int i=0;i<tableTwoObj.numberOfColumn;i++)
-            tableTwoSelectedColumnIndex[i] =- 1;
+            tableTwoSelectedColumnIndex[i] = -1;
 
         // select all columns from table one and table two  to joinResultColumnName[] array
         if(selectedItems[1].equals("*"))
@@ -314,7 +314,7 @@ public class Solution implements Runnable {
                         
                         if(tableTwoSelectedColumnIndex[k] != -1)
                         {
-                            joinResult[rowJoinResult][tableTwoSelectedColumnIndex[k]]=Integer.parseInt(tableTwoObj.tableData[i][k]);
+                            joinResult[rowJoinResult][tableTwoSelectedColumnIndex[k]]=Integer.parseInt(tableTwoObj.tableData[j][k]);
                         }
                     }
 
@@ -326,7 +326,7 @@ public class Solution implements Runnable {
             }
         }
 
-        sort joinResult array lexicographically
+       // sort joinResult array lexicographically
         Arrays.sort(joinResult,0, rowJoinResult,new Comparator<int[]>(){
             @Override
             public int compare(int[] o1, int[] o2) {
