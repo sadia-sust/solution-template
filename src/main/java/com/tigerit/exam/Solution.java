@@ -85,6 +85,7 @@ public class Solution implements Runnable {
         caseNo=1;
         while(testCase-- >0)
         {
+
             solve();
             
         }
@@ -93,7 +94,7 @@ public class Solution implements Runnable {
  
     public void solve()
     {
-        printLine("Test: "+caseNo++);
+        
 
         tableNameAlias = new HashMap<String,Integer>();
         tableArrayIndex = new HashMap<String,Integer>();
@@ -132,10 +133,12 @@ public class Solution implements Runnable {
             
         }
 
-       numberOfQuery = readLineAsInteger();
+        numberOfQuery = readLineAsInteger();
 
-       while(numberOfQuery-- >0)
-       {
+        printLine("Test: "+caseNo++);
+
+        while(numberOfQuery-- >0)
+        {
            String queryLineOne = readLine();
            queryLineOne = queryLineOne.trim();
 
@@ -177,7 +180,9 @@ public class Solution implements Runnable {
         
         executeQuery(TableOneName, TableTwoName, tableOneConditionColumn[1],tableTwoConditionColumn[1], queryLineOne);
 
-       } 
+        String blankLine = readLine();
+        
+        } 
 
 
     }
@@ -321,7 +326,7 @@ public class Solution implements Runnable {
             }
         }
 
-        // sort joinResult array lexicographically
+        sort joinResult array lexicographically
         Arrays.sort(joinResult,0, rowJoinResult,new Comparator<int[]>(){
             @Override
             public int compare(int[] o1, int[] o2) {
